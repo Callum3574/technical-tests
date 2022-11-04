@@ -60,6 +60,9 @@ def return_7_tiles(bag):
 tiles = return_7_tiles(bag)
 tiles_in_string = ''.join(tiles).lower()
 
+#score for this set of tiles
+score = value_of_words(alphabet, tiles_in_string)
+print(score)
 
 #compare given tiles to words in dict - aim here is to have a counter of each letter that the player has. If this amount of is present in a word in dict, return the word. 
 #I've found a collections import, creates dictionary with each char and amount of times it's present
@@ -72,7 +75,9 @@ letters = collections.Counter(tiles_in_string)
 #this loops through line of text file and return the word as a dict similar to letters above... 
 for line in open('dictionary.txt'):
     dict_words = collections.Counter(line)
-    print(dict_words)
 
 
+
+
+#compare letters to dict
 
