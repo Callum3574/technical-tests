@@ -69,22 +69,23 @@ print(score)
 
 #this returns a dict of all the char as keys, and value of how many times present. ----> The aim here is to compare this to each word in the dict
 letters = collections.Counter(tiles_in_string)
+print(f"User - {letters}")
 
 
 #need to loop through the dict and make a collection dict
 #this loops through line of text file and return the word as a dict similar to letters above... 
 #.strip() gets ride of spaces
 
-for line in open('dictionary.txt'):   
-    dict_words = collections.Counter(line.strip())
-    
-for letters in dict_words:
-    if letters in dict_words.keys():
-        print(letters)
-
+for line in open('dictionary.txt'):
+    dict_words = collections.Counter(line.strip()) 
+    if dict_words.keys() == letters.keys():
+        print(f"Dict - {dict_words}")
+        
 
 
 
 #compare letters to dict
 
-# if (dict_words.items())
+
+
+
