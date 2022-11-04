@@ -73,11 +73,18 @@ letters = collections.Counter(tiles_in_string)
 
 #need to loop through the dict and make a collection dict
 #this loops through line of text file and return the word as a dict similar to letters above... 
-for line in open('dictionary.txt'):
-    dict_words = collections.Counter(line)
+#.strip() gets ride of spaces
+
+for line in open('dictionary.txt'):   
+    dict_words = collections.Counter(line.strip())
+    
+for letters in dict_words:
+    if letters in dict_words.keys():
+        print(letters)
 
 
 
 
 #compare letters to dict
 
+# if (dict_words.items())
