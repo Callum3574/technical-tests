@@ -1,8 +1,6 @@
 import random
 import collections
 
-# with open ('dictionary.txt') as f:
-#     contents = f.read()
 
 alphabet = {
     'a':1,
@@ -37,7 +35,6 @@ bag = ['E','E','E','E','E','E','E','E','E','E','E','E','A','I','A','I','A','I','
 
 #shuffle bag so it's random every
 random.shuffle(bag)
-print(bag)
 
 
 #function to get value of words
@@ -62,7 +59,7 @@ tiles_in_string = ''.join(tiles).lower()
 
 #score for this set of tiles
 score = value_of_words(alphabet, tiles_in_string)
-print(score)
+# print(score)
 
 #compare given tiles to words in dict - aim here is to have a counter of each letter that the player has. If this amount of is present in a word in dict, return the word. 
 #I've found a collections import, creates dictionary with each char and amount of times it's present
@@ -70,7 +67,6 @@ print(score)
 #this returns a dict of all the char as keys, and value of how many times present. ----> The aim here is to compare this to each word in the dict
 letters = collections.Counter(tiles_in_string)
 print(f"User - {tiles_in_string}")
-
 
 #need to loop through the dict and make a collection dict
 #this loops through line of text file and return the word as a dict similar to letters above... 
@@ -81,16 +77,13 @@ for line in open('dictionary.txt'):
     if dict_words.keys() == letters.keys():
         print(f"Dict - {line}")
         if dict_words.values() == letters.values():
-            print(dict_words)
-            
+            dict_words1 = collections.Counter(line)
         
-        
-    
+
+
 
 
 
 #compare letters to dict
-
-
 
 
